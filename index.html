@@ -9,20 +9,32 @@
 </head>
 
 <body data-ng-controller="mainCtrl">
-
-  <div>
-      Filter: <input type="text" ng-model='filterText'/>
+<header class="header">
+  <div class="logo">
+    <h1>quoteBook</h1>
+  </div>
+  <div class="filter">
+      <input type="text" ng-model='filterText' placeholder="Filter Quotes" />
+  </div>
+  <div class="addButton">
+      <a href="#add"><button>Add Quote</button></a>
   </div>
 
-    <p ng-repeat="quote in quotes | filter: filterText">
-        <span class="text">{{quote.text}}</span>
-        <span class="author"> -- {{quote.author}}</span>
-        <button ng-click="deleteMe(quote.text)">Delete</button>
-    </p>
+</header>
 
-    <input type="text" placeholder="Add new quote!" ng-model='newQuoteText'>
-    <input type="text" placeholder="Quotes author!" ng-model='newQuoteAuthor'>
-    <button ng-click="addQuote()">Add Quote</button>
+    <section class="quotes">
+        <p ng-repeat="quote in quotes | filter: filterText">
+            <span class="text">{{quote.text}}</span></br>
+            <span class="author"> -- {{quote.author}}</span>
+            <button ng-click="deleteMe(quote.text)" class="delete">Delete</button>
+        </p>
+    </section>
+    <section class="addQuote" id="add">
+      <input type="text" placeholder="Add new quote!" ng-model='newQuoteText'>
+      <input type="text" placeholder="Quotes author!" ng-model='newQuoteAuthor'>
+      <button ng-click="addQuote()">Add Quote</button>
+    </section>
+
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
