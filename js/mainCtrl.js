@@ -1,4 +1,4 @@
-angular.module("quoteBook").controller("mainCtrl", function($scope, dataService) {
+angular.module("quoteBook").controller("mainCtrl", function($scope, $localStorage, dataService) {
 
   $scope.getQuotes = function() {
     $scope.quotes = dataService.getQuotes();
@@ -20,5 +20,13 @@ angular.module("quoteBook").controller("mainCtrl", function($scope, dataService)
       $scope.newQuoteAuthor = "";
     }
   };
+
+  // $scope.saveData = function() {
+  //
+  // };
+  //
+  // $scope.loadData = function() {
+  //   $scope.getQuotes =
+  // };
 
 });
